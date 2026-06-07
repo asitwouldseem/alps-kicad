@@ -1,7 +1,7 @@
 (kicad_pcb
-	(version 20241229)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "9.0")
+	(generator_version "10.0")
 	(general
 		(thickness 1.6)
 		(legacy_teardrops no)
@@ -36,7 +36,20 @@
 	(setup
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
-		(tenting front back)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -45,15 +58,12 @@
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
-			(dashed_line_dash_ratio 12.000000)
-			(dashed_line_gap_ratio 3.000000)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
 			(svgprecision 4)
 			(plotframeref no)
 			(mode 1)
 			(useauxorigin no)
-			(hpglpennumber 1)
-			(hpglpenspeed 20)
-			(hpglpendiameter 15.000000)
 			(pdf_front_fp_property_popups yes)
 			(pdf_back_fp_property_popups yes)
 			(pdf_metadata yes)
@@ -77,12 +87,6 @@
 			(outputdirectory "")
 		)
 	)
-	(net 0 "")
-	(net 1 "IN_2")
-	(net 2 "IN_1")
-	(net 3 "GNDA")
-	(net 4 "OUT_1")
-	(net 5 "OUT_2")
 	(footprint "MountingHole:MountingHole_2.2mm_M2_Pad_TopOnly"
 		(layer "F.Cu")
 		(uuid "0a5283e8-b411-463e-8d21-5d2de4e9bf58")
@@ -137,6 +141,7 @@
 			)
 		)
 		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -242,6 +247,7 @@
 			)
 		)
 		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -347,6 +353,7 @@
 			)
 		)
 		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -459,6 +466,7 @@
 		(sheetname "/")
 		(sheetfile "alps-rk27.kicad_sch")
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 23.3 -8.6)
 			(end 45.3 -8.6)
@@ -609,7 +617,7 @@
 			(size 3 1.5)
 			(drill oval 2.5 1.2)
 			(property pad_prop_mechanical)
-			(layers "*.Mask")
+			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(thermal_bridge_angle 45)
 			(uuid "fc557f7a-120d-4484-84df-46c994cf2eeb")
@@ -619,7 +627,7 @@
 			(size 3 1.5)
 			(drill oval 2.5 1.2)
 			(property pad_prop_mechanical)
-			(layers "*.Mask")
+			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(thermal_bridge_angle 45)
 			(uuid "8ff4271e-f670-4220-ad3a-7e6314549bc8")
@@ -630,7 +638,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 2 "IN_1")
+			(net "IN_1")
 			(pinfunction "1")
 			(pintype "passive")
 			(uuid "2c09af09-7d96-4b7d-9ddc-0458608f8158")
@@ -641,7 +649,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 4 "OUT_1")
+			(net "OUT_1")
 			(pinfunction "2")
 			(pintype "passive")
 			(uuid "3767e44b-f2ea-41d6-88a8-397526482088")
@@ -652,7 +660,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 3 "GNDA")
+			(net "GNDA")
 			(pinfunction "3")
 			(pintype "passive")
 			(uuid "8e491599-f087-44bc-a60d-f2f24e22a14d")
@@ -663,7 +671,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 3 "GNDA")
+			(net "GNDA")
 			(pinfunction "4")
 			(pintype "passive")
 			(uuid "e662f7ee-040f-403d-896e-1920f7dfafb4")
@@ -674,7 +682,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 5 "OUT_2")
+			(net "OUT_2")
 			(pinfunction "5")
 			(pintype "passive")
 			(uuid "4a9da890-bba6-409c-87ac-6e755053f00f")
@@ -685,7 +693,7 @@
 			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 1 "IN_2")
+			(net "IN_2")
 			(pinfunction "6")
 			(pintype "passive")
 			(uuid "620d6045-44db-4398-9cf7-b43df5303f41")
@@ -753,6 +761,7 @@
 				)
 			)
 		)
+		(duplicate_pad_numbers_are_jumpers no)
 		(pad "1" thru_hole circle
 			(at 0 0)
 			(size 2.6 2.6)
@@ -823,6 +832,7 @@
 		(sheetname "/")
 		(sheetfile "alps-rk27.kicad_sch")
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.6 -2.75)
 			(end -2.85 -2.75)
@@ -1007,7 +1017,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.147059)
-			(net 5 "OUT_2")
+			(net "OUT_2")
 			(pinfunction "Pin_1")
 			(pintype "passive")
 			(uuid "9990f687-4afb-4093-8701-bcafa9ab1007")
@@ -1018,7 +1028,7 @@
 			(drill 0.95)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 1 "IN_2")
+			(net "IN_2")
 			(pinfunction "Pin_2")
 			(pintype "passive")
 			(uuid "a4778856-bf0e-40ea-a79b-13e9c99641c7")
@@ -1029,7 +1039,7 @@
 			(drill 0.95)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 3 "GNDA")
+			(net "GNDA")
 			(pinfunction "Pin_3")
 			(pintype "passive")
 			(uuid "eec6762b-1c09-421b-81c5-4c015b0af0f0")
@@ -1106,6 +1116,7 @@
 		(sheetname "/")
 		(sheetfile "alps-rk27.kicad_sch")
 		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.6 -2.75)
 			(end -2.85 -2.75)
@@ -1290,7 +1301,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.147059)
-			(net 4 "OUT_1")
+			(net "OUT_1")
 			(pinfunction "Pin_1")
 			(pintype "passive")
 			(uuid "47273f29-70db-4fc9-a0bb-357198d7cc86")
@@ -1301,7 +1312,7 @@
 			(drill 0.95)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 2 "IN_1")
+			(net "IN_1")
 			(pinfunction "Pin_2")
 			(pintype "passive")
 			(uuid "144ca9ca-dee6-4bf5-9d06-d06da597afe6")
@@ -1312,7 +1323,7 @@
 			(drill 0.95)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 3 "GNDA")
+			(net "GNDA")
 			(pinfunction "Pin_3")
 			(pintype "passive")
 			(uuid "f7484cbc-b8cd-4469-8e70-773b1e359fab")
@@ -1331,15 +1342,15 @@
 		)
 	)
 	(gr_rect
-		(start 140 85)
-		(end 161.2 90.9)
+		(start 126.675 80.7)
+		(end 136.525 95.8)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill no)
 		(layer "B.SilkS")
-		(uuid "84aff15e-c2d2-4b93-b1d5-3137f3237f1a")
+		(uuid "f198bd63-34dd-4140-a8e2-2350da9432cc")
 	)
 	(gr_rect
 		(start 126.7 97)
@@ -1353,15 +1364,15 @@
 		(uuid "da214bc3-1da0-4336-835b-c0d2e9a533d0")
 	)
 	(gr_rect
-		(start 126.675 80.7)
-		(end 136.525 95.8)
+		(start 140 85)
+		(end 161.2 90.9)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill no)
 		(layer "B.SilkS")
-		(uuid "f198bd63-34dd-4140-a8e2-2350da9432cc")
+		(uuid "84aff15e-c2d2-4b93-b1d5-3137f3237f1a")
 	)
 	(gr_rect
 		(start 126.1 72.6)
@@ -1374,22 +1385,10 @@
 		(layer "Edge.Cuts")
 		(uuid "996d5585-e0e9-4299-9c0b-b17c6c0c5ba8")
 	)
-	(gr_text "SOURCE 2"
-		(at 127.6 93.8 180)
+	(gr_text "GNDA"
+		(at 135.1 100.9 180)
 		(layer "B.SilkS")
-		(uuid "0079b512-259e-41a1-9b68-b6e8e8e6399e")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "IN2"
-		(at 135.3 87 180)
-		(layer "B.SilkS")
-		(uuid "16b34641-5873-4174-9fb1-77e75addee07")
+		(uuid "f35941a2-8129-4724-85fc-9a31582d3147")
 		(effects
 			(font
 				(size 1 1)
@@ -1398,34 +1397,34 @@
 			(justify right mirror)
 		)
 	)
-	(gr_text "SOURCE 1"
-		(at 127.5 110.2 180)
+	(gr_text "OUT1"
+		(at 135.2 105.9 180)
 		(layer "B.SilkS")
-		(uuid "18ef96dc-7fc7-4096-b5d6-68cfd31237bc")
+		(uuid "d9253c4b-dbb2-492e-aa95-343b0a19d76f")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
+				(thickness 0.1)
 			)
-			(justify left bottom mirror)
-		)
-	)
-	(gr_text "ALPS RK27 BREAKOUT\nCAMERON-MORGAN.COM"
-		(at 150.6 88 180)
-		(layer "B.SilkS")
-		(uuid "262bb813-a2cc-4564-84dd-0602857d9268")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.125)
-			)
-			(justify mirror)
+			(justify right mirror)
 		)
 	)
 	(gr_text "GNDA"
 		(at 135.3 84.6 180)
 		(layer "B.SilkS")
 		(uuid "29dba43a-7e39-4238-a10d-faca6dd9f8ec")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify right mirror)
+		)
+	)
+	(gr_text "IN2"
+		(at 135.3 87 180)
+		(layer "B.SilkS")
+		(uuid "16b34641-5873-4174-9fb1-77e75addee07")
 		(effects
 			(font
 				(size 1 1)
@@ -1458,28 +1457,40 @@
 			(justify right mirror)
 		)
 	)
-	(gr_text "OUT1"
-		(at 135.2 105.9 180)
+	(gr_text "ALPS RK27 BREAKOUT\nCAMERON-MORGAN.COM"
+		(at 150.6 88 180)
 		(layer "B.SilkS")
-		(uuid "d9253c4b-dbb2-492e-aa95-343b0a19d76f")
+		(uuid "262bb813-a2cc-4564-84dd-0602857d9268")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.125)
 			)
-			(justify right mirror)
+			(justify mirror)
 		)
 	)
-	(gr_text "GNDA"
-		(at 135.1 100.9 180)
+	(gr_text "SOURCE 1"
+		(at 127.5 110.2 180)
 		(layer "B.SilkS")
-		(uuid "f35941a2-8129-4724-85fc-9a31582d3147")
+		(uuid "18ef96dc-7fc7-4096-b5d6-68cfd31237bc")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
-			(justify right mirror)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "SOURCE 2"
+		(at 127.6 93.8 180)
+		(layer "B.SilkS")
+		(uuid "0079b512-259e-41a1-9b68-b6e8e8e6399e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
 		)
 	)
 	(segment
@@ -1487,7 +1498,7 @@
 		(end 153.9 107.35)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 1)
+		(net "IN_2")
 		(uuid "697cf2c3-7cae-417d-a176-5b769a57ed29")
 	)
 	(segment
@@ -1495,7 +1506,7 @@
 		(end 153.9 94.3)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 1)
+		(net "IN_2")
 		(uuid "7c5af31d-492b-44e3-a5f5-0b9c73fccc56")
 	)
 	(segment
@@ -1503,7 +1514,7 @@
 		(end 146.7 87.1)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 1)
+		(net "IN_2")
 		(uuid "8c367c0d-3027-4264-a1f5-ce6efbcaf305")
 	)
 	(segment
@@ -1511,7 +1522,7 @@
 		(end 129.2 103.4)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 2)
+		(net "IN_1")
 		(uuid "4492b4c5-2813-40a2-9cdf-cbda6d7eb175")
 	)
 	(segment
@@ -1519,7 +1530,7 @@
 		(end 140.2 110.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 2)
+		(net "IN_1")
 		(uuid "9414ca8c-38d9-4f5c-9ba5-c466dd6232ae")
 	)
 	(segment
@@ -1527,7 +1538,7 @@
 		(end 133 103.4)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 2)
+		(net "IN_1")
 		(uuid "a201b168-6bad-4102-8c28-8373b17fd65b")
 	)
 	(segment
@@ -1535,7 +1546,7 @@
 		(end 147.15 110.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 2)
+		(net "IN_1")
 		(uuid "c9137acb-b378-4ced-b1d2-fe4b239d3344")
 	)
 	(segment
@@ -1543,7 +1554,7 @@
 		(end 135.5 109.2)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 4)
+		(net "OUT_1")
 		(uuid "6256ea9f-eee6-485e-bc49-2df1bc211386")
 	)
 	(segment
@@ -1551,7 +1562,7 @@
 		(end 138.9 112.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 4)
+		(net "OUT_1")
 		(uuid "9d1b0849-54f8-407a-8c46-64be51335162")
 	)
 	(segment
@@ -1559,7 +1570,7 @@
 		(end 132.2 105.9)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 4)
+		(net "OUT_1")
 		(uuid "e0c9f95f-75e0-44f3-a12e-bb61edffdd02")
 	)
 	(segment
@@ -1567,7 +1578,7 @@
 		(end 144.15 112.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 4)
+		(net "OUT_1")
 		(uuid "ecf5486f-0e9f-45c0-babe-b5f1fe9c9412")
 	)
 	(segment
@@ -1575,7 +1586,7 @@
 		(end 144.15 112.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 4)
+		(net "OUT_1")
 		(uuid "f34a9e29-dbe9-4a0f-b2b0-4df07c01588f")
 	)
 	(segment
@@ -1583,7 +1594,7 @@
 		(end 129.5 89.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 5)
+		(net "OUT_2")
 		(uuid "2be03580-d7c3-45e8-8182-18837777a545")
 	)
 	(segment
@@ -1591,7 +1602,7 @@
 		(end 142.8 89.6)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 5)
+		(net "OUT_2")
 		(uuid "5c42aa17-82a4-42a9-bb92-cd7ab10e1235")
 	)
 	(segment
@@ -1599,12 +1610,11 @@
 		(end 148.9 95.7)
 		(width 1.5)
 		(layer "F.Cu")
-		(net 5)
+		(net "OUT_2")
 		(uuid "c2152868-e6e8-42bd-b97d-1c5185dfc4e5")
 	)
 	(zone
-		(net 3)
-		(net_name "GNDA")
+		(net "GNDA")
 		(layer "B.Cu")
 		(uuid "3c7ab732-d816-46cd-91b0-3c411fc0d132")
 		(hatch edge 0.5)
@@ -1612,15 +1622,14 @@
 			(clearance 0.5)
 		)
 		(min_thickness 0.25)
-		(filled_areas_thickness no)
 		(fill yes
 			(thermal_gap 0.5)
 			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
 		)
 		(polygon
 			(pts
-				(xy 127 73) (xy 169.5 73) (xy 169.5 113) (xy 169.5 113) (xy 169.5 120) (xy 127 120) (xy 127 113.5)
-				(xy 127 113.5)
+				(xy 127 73) (xy 169.5 73) (xy 169.5 113) (xy 169.5 120) (xy 127 120) (xy 127 113.5)
 			)
 		)
 		(filled_polygon
